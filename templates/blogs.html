@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="blogs-container">
+        <h2>Blogs Page</h2>
+        <hr>
+        <ul class="blog-list">
+            {% for article in articles %}
+                <li class="blog-item">
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.description }}</p>
+                    <div class="blog-image">
+                        {% if article.image %}
+                            <img src="{{ article.image.url }}" alt="{{ article.title }}">
+                        {% endif %}
+                    </div>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
